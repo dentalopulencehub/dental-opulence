@@ -24,7 +24,7 @@ const WhiteFillingOurCases = () => {
 
   return (
     <div className="w-full">
-      <div className="w-full lg:px-[100px] sm:px-[40px] px-[20px] pt-[80px] bg-white flex justify-between items-center">
+      <div className="w-full lg:px-[100px]  sm:px-[40px] px-[20px] pt-[80px] bg-white flex justify-between items-center">
         <div className="">
           <p className="flex flex-col">
             <span className={`text-[#4e4e4e] text-base font-Pangram-Regular`}>

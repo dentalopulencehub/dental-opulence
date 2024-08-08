@@ -16,7 +16,7 @@ const HomeAwards = () => {
   )).flat(); 
   return (
     <div className="w-full">
-      <div className="bg-[#100E10] w-full py-[120px]">
+      <div className="bg-[#100E10] w-full lg:py-[120px]">
         {/* <Marquee className="" speed={100}>
           {home_awards_images.map((award, index) => (
             <Image
