@@ -14,7 +14,7 @@ const AboutAwardSection = () => {
           </h3>
           <Image src={logo} alt="Logo" className="mt-6" />
         </div>
-        <div className="flex flex-wrap justify-center items-center gap-6">
+        <div className="flex flex-wrap justify-center items-center gap-2">
           {about_award_winning.map((data, index) => (
             <AboutAwardCard key={index} {...data} />
           ))}

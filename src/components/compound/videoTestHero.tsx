@@ -6,7 +6,7 @@ import stroke_hero_text_testi from "../../../assets/fonts/stroke_hero_text_testi
 const VideoTestHero = () => {
   return (
     <div className="bg-white ">
-      <div className="bg-[#100E10] rounded-t-[24px] pt-[220px] pb-[100px] w-full h-full xl:items-center flex xl:flex-row flex-col justify-between lg:px-[100px] sm:px-[40px] px-[20px] gap-[42px]">
+      <div className="bg-[#100E10] pt-[220px] pb-[100px] w-full h-full xl:items-center flex xl:flex-row flex-col justify-between lg:px-[100px] sm:px-[40px] px-[20px] gap-[42px]">
         <div className="flex flex-col xl:items-end" >
           <h1 className="xs:text-[104px] text-[64px] font-Pangram-Bold flex-wrap flex">
             <span className="text-[#605E60] font-black mr-[26px]">OUR</span>

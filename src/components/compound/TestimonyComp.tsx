@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, ReactNode, useEffect } from 'react'
+import React, { useState, ReactNode, useEffect, useRef } from 'react'
 import { motion } from "framer-motion";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import useMeasure from "react-use-measure";
@@ -21,82 +21,94 @@ interface CardCarouselProps {
 
 const CardCarousel: React.FC<CardCarouselProps> = ({ children }) => {
   const [ref, { width }] = useMeasure();
-  const [offset, setOffset] = useState(0);
-  const [cardSize, setCardSize] = useState(340); // Default card size (including margin)
   const childrenArray = React.Children.toArray(children);
   const isMobile = width <= BREAKPOINTS.sm;
-  const visibleCards = isMobile ? 1 : width > BREAKPOINTS.lg ? 3 : 2;
-  
-  useEffect(() => {
-    // Adjust card size based on screen width
-    if (isMobile) {
-      setCardSize(width);
-    } else {
-      setCardSize(340); // Default desktop card size
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const scrollBy = (direction: "left" | "right") => {
+    if (containerRef.current) {
+      const scrollAmount = isMobile ? width : 340;
+      const newPosition = direction === "left" ? scrollPosition - scrollAmount : scrollPosition + scrollAmount;
+      containerRef.current.scrollTo({ left: newPosition, behavior: 'smooth' });
+      setScrollPosition(newPosition);
     }
-  }, [width, isMobile]);
-
-  const CAN_SHIFT_LEFT = offset < 0;
-  const CAN_SHIFT_RIGHT = Math.abs(offset) < cardSize * (childrenArray.length - visibleCards);
-  
-  const shiftLeft = () => {
-    if (!CAN_SHIFT_LEFT) return;
-    setOffset((pv) => Math.min(0, pv + cardSize));
-  };
-  
-  const shiftRight = () => {
-    if (!CAN_SHIFT_RIGHT) return;
-    setOffset((pv) => Math.max(-(cardSize * (childrenArray.length - visibleCards)), pv - cardSize));
   };
 
-  return (
-    <section className="bg-transparent" ref={ref}>
-      <div className="relative overflow-hidden">
-        <div className="mx-auto lg:max-w-6xl">
-          <motion.div
-            animate={{ x: offset }}
-            className="flex"
+  if (isMobile) {
+    return (
+      <section className="bg-transparent flex-1" ref={ref}>
+        <div className="relative overflow-x-auto">
+          <div 
+            ref={containerRef}
+            className="flex space-x-4 px-2 overflow-x-auto scroll-smooth"
           >
             {React.Children.map(children, (child, index) => (
-              <div 
-                key={index} 
-                style={{ 
-                  width: cardSize, 
-                  flexShrink: 0, 
-                  padding: isMobile ? 0 : '0 10px',
-                  height: isMobile ? 'auto' : '400px' // Fixed height for larger screens
+              <div
+                key={index}
+                style={{
+                  width: '100%',
+                  flexShrink: 0,
+                  height: 'auto',
                 }}
                 className="flex"
               >
                 {child}
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
-        {childrenArray.length > visibleCards && (
-          <>
-            <motion.button
-              initial={false}
-              animate={{ x: CAN_SHIFT_LEFT ? "0%" : "-100%" }}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-30 rounded-r-xl bg-slate-100/30 p-3 pl-2 text-4xl text-white backdrop-blur-sm transition-[padding] hover:pl-3"
-              onClick={shiftLeft}
+      </section>
+    );
+  }
+
+  return (
+    <section className="bg-transparent flex-1" ref={ref}>
+      <div className="relative">
+        <div
+          ref={containerRef}
+          className="flex space-x-4 px-2 overflow-x-hidden scroll-smooth"
+        >
+          {React.Children.map(children, (child, index) => (
+            <div
+              key={index}
+              style={{
+                width: 340,
+                flexShrink: 0,
+                height: '400px',
+              }}
+              className="flex"
             >
-              <FiChevronLeft />
-            </motion.button>
-            <motion.button
-              initial={false}
-              animate={{ x: CAN_SHIFT_RIGHT ? "0%" : "100%" }}
-              className="absolute  right-0 lg:right-10 top-1/2 -translate-y-1/2 z-30 rounded-l-xl bg-slate-100/30 p-3 pr-2 text-4xl text-white backdrop-blur-sm transition-[padding] hover:pr-3"
-              onClick={shiftRight}
-            >
-              <FiChevronRight />
-            </motion.button>
-          </>
+              {child}
+            </div>
+          ))}
+        </div>
+
+        {/* Left Button */}
+        {scrollPosition > 0 && (
+          <motion.button
+            onClick={() => scrollBy("left")}
+            className="absolute left-1 top-1/2 transform -translate-y-1/2 p-2 bg-gray-400/70 text-white rounded-full"
+          >
+            <FiChevronLeft size={24} />
+          </motion.button>
+        )}
+
+        {/* Right Button */}
+        {scrollPosition < (containerRef.current?.scrollWidth || 0) - (containerRef.current?.clientWidth || 0) && (
+          <motion.button
+            onClick={() => scrollBy("right")}
+            className="absolute right-1 top-1/2 transform -translate-y-1/2 p-2 bg-gray-400/70 text-white rounded-full"
+          >
+            <FiChevronRight size={24} />
+          </motion.button>
         )}
       </div>
     </section>
   );
 };
+
+
 
 interface Review {
   name: string;
@@ -179,55 +191,63 @@ const TestimonyComp = () => {
   };
 
   return (
-    <div className="md:container mx-auto md:px-14 px-5 mb-[6.6rem] md:mt-14 mt-10">
+    <div className=" max-w-7xl lg:my-20 w-full p-5 lg:p-0 mx-auto overflow-hidden">
+    <div>
+      <p className="">
+        <span className="text-[#000] font-Pangram-Regular text-[16px] font-[500]">Online Reviews</span>
+        <Image src={underline_vector} alt="underline_vector" />
+      </p>
+      <div className='md:flex justify-between items-center'>
+        <p className="md:text-[34px] text-[28px] font-inter font-[700] mt-3 leading-[42px]">
+          Your Reliable Dentist for <br/>Optimal Oral Health
+        </p>
+        <Link href={'/testimonials'} className='xl:flex gap-3 hidden  items-center '>
+          <SecondaryLink
+            href="#"
+            title="See Client Reactions"
+            style="border border-[#100E10] hover:bg-[#100E10] hover:text-white flex flex-row gap-3 items-center justify-center rounded-full p-3 px-6 duration-0"
+            hovered={linkHover}
+            setHovered={setLinkHover}
+          />
+        </Link>
+      </div>
+    </div>
+      
+      <div className="w-full flex-1 mt-6 md:mt-10">
+      <CardCarousel>
+      <GoogleCard />
+{reviews.map((review, i) => (
+  <div
+    key={i}
+    className="w-full -ml-6 xl:-ml-0 aspect-[3/4] h-full flex-shrink-0"
+  >
+    <div className="h-full w-full rounded-[0.875rem] bg-black flex flex-col justify-between p-8">
       <div>
-        <p className="">
-          <span className="text-[#000] font-Pangram-Regular text-[16px] font-[500]">Online Reviews</span>
-          <Image src={underline_vector} alt="underline_vector" />
+        <p className="text-yellow-400 font-encode font-medium text-xl md:text-2xl">
+          {renderStars(review.rating)}
         </p>
-        <div className='md:flex justify-between items-center'>
-          <p className="md:text-[34px] text-[28px] font-encode font-[700] mt-3 leading-[42px]">
-            Your Reliable Dentist for <br/>Optimal Oral Health
-          </p>
-          <Link href={'/testimonials'} className='flex gap-3 items-center  md:px-7 py-2 '>
-            <SecondaryLink
-              href="#"
-              title="See Client Reactions"
-              style="border border-[#100E10] hover:bg-[#100E10] hover:text-white flex flex-row gap-3 items-center justify-center rounded-[32px] w-[280px] h-[56px] duration-0"
-              hovered={linkHover}
-              setHovered={setLinkHover}
-            />
-          </Link>
-        </div>
-      </div>
-      <div className='flex flex-col mt-6 md:flex-row items-center'>
-        <GoogleCard />
-        <div className="w-full flex-grow md:w-auto mt-6 md:mt-0">
-        <CardCarousel>
-  {reviews.map((review, i) => (
-    <div
-      key={i}
-      className="w-full h-full flex-shrink-0"
-    >
-      <div className="h-full w-full rounded-[0.875rem] bg-black flex flex-col justify-between p-8">
-        <div>
-          <p className="text-yellow-400 font-encode font-medium text-xl md:text-2xl">
-            {renderStars(review.rating)}
-          </p>
-          <p className="mt-6 font-Pangram-Light font-[200] text-white text-[14px]">
-            {review.comment}
-          </p>
-        </div>
-        <p className="text-white font-[500] text-[14px] md:text-[18px] uppercase mt-4">
-          {review.name}
+        <p className="mt-6 font-Pangram-Light font-[200] text-white text-sm md:text-[14px]">
+          {review.comment}
         </p>
       </div>
+      <p className="text-white font-[400] text-[18px] uppercase mt-4">
+        {review.name}
+      </p>
     </div>
-  ))}
+  </div>
+))}
 </CardCarousel>
-        </div>
-      </div>
+<Link href={'/testimonials'} className='flex gap-3 my-6 xl:hidden  items-center '>
+          <SecondaryLink
+            href="#"
+            title="See Client Reactions"
+            style="border border-[#100E10] hover:bg-[#100E10] hover:text-white flex flex-row gap-3 items-center justify-center rounded-full p-3 px-6 duration-0"
+            hovered={linkHover}
+            setHovered={setLinkHover}
+          />
+        </Link>
     </div>
+  </div>
   )
 }
 

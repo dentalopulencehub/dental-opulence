@@ -55,11 +55,11 @@ const WhiteFillingOurCases = () => {
         </div>
       </div>
 
-      <div className="mt-6">
+      <div className="mt-6 mx-auto">
         <Carousel direction={direction} setDirection={setDirection}>
           {white_fillings_our_cases_images.map((data, index, arr) => (
             <div
-              className={`sm:w-[280px] rounded-3xl overflow-hidden w-fit mx-auto card flex-shrink-0 ${
+              className={`w-[280px] overflow-hidden rounded-3xl mx-auto card flex-shrink-0 ${
                 index !== arr.length - 1 ? "lg:mr-[40px]" : "lg:mr-[130px]"
               }`}
               key={index}
@@ -71,7 +71,7 @@ const WhiteFillingOurCases = () => {
                 </p>
               </div>
               <div className="relative">
-                <Image src={data} alt="Result Image" className="w-full" />
+                <Image src={data} alt="Result Image" className="" />
                 <Image
                   className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                   src={result_logo_mini}

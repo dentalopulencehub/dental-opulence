@@ -21,7 +21,7 @@ const HomeHero = () => {
             Achieve your perfect smile with us.
           </p>
 
-          <div className="mt-6">
+          <div className="mt-6 flex flex-col items-center xl:items-start">
             <div className="flex gap-2 items-center">
               <Image src={right_thick} alt="right_thick" />
               <p className="text-[16px] text-[#fff] lg:text-left text-center">0% Finance Options</p>
@@ -33,12 +33,12 @@ const HomeHero = () => {
             </div>
           </div>
 
-          <div className="flex gap-6 xs:mt-[56px] mt-[32px] xl:mx-0 mx-auto xs:flex-row flex-col">
+          <div className="flex gap-6 xs:mt-[56px] mt-[32px] xl:mx-0 mx-auto xs:flex-row ">
             <Link
               href="https://book.do.co.uk/"
               target="_blank"
               title="Book now"
-              className="py-4 px-[49px] rounded-[32px] bg-white text-[#100E10] font-Pangram-Medium text-base hover:text-white hover:bg-transparent border border-transparent hover:border-white duration-0"
+              className="py-4 px-8 lg:px-[49px] rounded-[32px] bg-white text-[#100E10] font-Pangram-Medium text-sm lg:text-base hover:text-white hover:bg-transparent border border-transparent hover:border-white duration-0"
             >
               Book now
             </Link>
@@ -46,7 +46,7 @@ const HomeHero = () => {
             <PrimaryLink
               href="/about"
               title="About us"
-              style="py-4 px-[49px] rounded-[32px] bg-transparent text-white border border-[#fff] font-Pangram-Medium text-base hover:text-[#100E10] hover:bg-white duration-0"
+              style="py-4 px-8 lg:px-[49px] rounded-[32px] bg-transparent text-white border border-[#fff] font-Pangram-Medium text-sm lg:text-base hover:text-[#100E10] hover:bg-white duration-0"
             />
           </div>
         </div>

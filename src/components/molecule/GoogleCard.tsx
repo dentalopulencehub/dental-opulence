@@ -7,10 +7,10 @@ import googleLogo from "../../../assets/images/logos_google.svg"
 const GoogleCard: React.FC = () => {
   const arr = ['', '', '', '', '']
   return (
-    <div className="w-full md:max-w-[19.64rem] md:mr-[1.4rem] flex-shrink-0">
-      <div className="md:pt-[2.625rem] pt-[1rem] card pb-[2rem] md:pb-[2.933rem] w-full md:h-full md:min-h-[24.5rem] min-h-[16rem] md:px-8 px-4 rounded-[0.875rem] bg-gray-100 flex flex-col justify-between group google-card">
+    <div className="w-11/12 md:max-w-[19.64rem] md:mr-[1.4rem] flex-shrink-0">
+      <div className="md:pt-[2.625rem] pt-[1rem] card pb-[2rem] md:pb-[2.933rem] w-full h-full md:min-h-[24.5rem] min-h-[16rem] md:px-8 px-4 rounded-[0.875rem] bg-gray-100 flex flex-col justify-between group google-card">
         <div className="flex items-center gap-4">
-          <FcGoogle size={48} className="md:w-[60px] md:h-[60px]"/>
+          <FcGoogle size={48} className=""/>
           <div className="text-xl font-encode text-[#BDBDBD] group-hover:text-[#FEC600]">
             <div className="flex gap-1">
               {arr.map((star, i) => (
@@ -37,12 +37,12 @@ const GoogleCard: React.FC = () => {
                 </svg>
               ))}
             </div>
-            <p className="text-[#1E1E1E] mt-2 text-xs md:text-sm"> 30+ reviews </p>
+            <p className="text-[#1E1E1E] mt-2 md:text-sm"> 30+ reviews </p>
           </div>
         </div>
         <Link href='https://rb.gy/20dj6m' target='blank' className="mt-auto">
           <div className="flex border-black border-b pb-3 items-center">
-          <Image src={googleLogo} alt="Google" className="w-24 md:w-32" />
+          <Image src={googleLogo} alt="Google" className="w-3/4" />
           </div>
         </Link>
       </div>

@@ -8,7 +8,9 @@ import { MenuComponent } from '../components/import'
 import CookieConsentBanner from "../components/cookiesConcent/CookieConcent";
 
 export default function App({ Component, pageProps }: AppProps) {
+  
   return (
+    
     <>
     <ReduxProvider>
       <AOSInit />

@@ -34,11 +34,11 @@ const AboutPageAboutSection = () => {
   return (
     <div className="w-full">
       <div className="bg-[#100E10] w-full lg:px-[100px] sm:px-[40px] px-[20px] py-[80px] flex xl:flex-row flex-col justify-between gap-[70px] xl:gap-0">
-        <div className="xl:max-w-[400px] md:w-[70%] w-[90%]">
-          <h2 className="sm:text-[34px] sm:leading-[42px] text-[28px] text-white font-Pangram-Bold">
+        <div className="xl:max-w-[400px]">
+          <h2 className="sm:text-[34px]  md:w-[70%] sm:leading-[42px] mx-auto text-[28px] text-white font-inter font-bold text-center lg:text-left">
             Experience Dental Opulence: Radiant Smiles, Optimal Oral Health
           </h2>
-          <Image src={home_hero2_ill} alt="" className="mt-10" />
+          <Image src={home_hero2_ill} alt="" className="mt-10 mx-auto" />
         </div>
 
         <div className="xl:max-w-[584px] w-[90%] mx-auto flex flex-col xl:items-start items-center">
@@ -47,7 +47,7 @@ const AboutPageAboutSection = () => {
             <Image src={underline_vector} alt="" />
           </p>
           <h4
-            className="text-white font-Pangram-Regular mt-6 sm:text-[24px] text-[20px] sm:leading-[30px] leading-[28px] xl:text-left text-center flex flex-wrap"
+            className="text-white font-Pangram-Regular mt-6 sm:text-[25px] text-[20px] sm:leading-[36px] leading-[28px] text-center flex flex-wrap justify-center lg:justify-start"
             ref={element}
           >
             {words.map((word, index) => {

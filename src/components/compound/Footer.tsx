@@ -104,7 +104,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="w-full font-inter">
-            <div className="flex flex-wrap md:gap-[49px] justify-between">
+            <div className="flex lg:flex-row lg:flex-wrap flex-col gap-10  md:gap-[49px] justify-between">
               <div className="flex flex-col gap-10  w-[176px]">
                 <div>
                   <h3 className="text-white font-inter  text-xl">
@@ -282,7 +282,7 @@ const Footer = () => {
                 </div>
               </div>
               <div>
-                  <h3 className="text-white  font-inter text-xl">
+                  <h3 className="text-white md:mt-0 mt-8 font-inter text-xl">
                     Our Info
                   </h3>
                   <div onClick={() => handleSetPathToNavigate(dispatch, null)}>

@@ -19,7 +19,7 @@ const FixedRetainersHero = () => {
           We understand the importance of maintaining a straight and aligned smile after orthodontic treatment. That&apos;s why we offer fixed retainers, along with removable ones, to ensure the longevity of your results.
           </p>
 
-          <div className="mt-6">
+          <div className="mt-6 flex flex-col items-center xl:items-start">
             <div className="flex gap-2 items-center">
               <Image src={right_thick} alt="right_thick" />
               <p className="text-[16px] text-[#161616] lg:text-left text-center">0% Finance Options</p>

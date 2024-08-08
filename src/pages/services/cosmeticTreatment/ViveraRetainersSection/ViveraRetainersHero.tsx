@@ -19,7 +19,7 @@ const ViveraRetainersHero = () => {
           At our dental practice, we offer Vivera retainers to maintain your straight and aligned smile after orthodontic treatment. They are convenient and comfortable for long-term results.
           </p>
 
-          <div className="mt-6">
+          <div className="mt-6 flex flex-col items-center xl:items-start">
             <div className="flex gap-2 items-center">
               <Image src={right_thick} alt="right_thick" />
               <p className="text-[16px] text-[#161616] lg:text-left text-center">0% Finance Options</p>

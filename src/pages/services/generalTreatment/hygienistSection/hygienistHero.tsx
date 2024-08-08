@@ -10,7 +10,7 @@ const HygienistHero = () => {
     <div className="w-full">
       <div className="bg-[#FFFFFF] rounded-t-[24px] pt-[100px] pb-[100px] h-full w-full items-center flex xl:flex-row flex-col justify-between xl:px-[100px] sm:px-[40px] px-[20px]">
         <div className="flex flex-col xl:items-start items-center w-full xl:w-[50%] py-8">
-          <div className="flex flex-row items-center gap-4">
+          <div className="flex flex-row items-center gap-4 ">
             <h1 className="font-Pangram-Bold sm:text-[60px] w-full sm:leading-[64px] text-[44px] xl:text-left text-center text-[#161616]">
             Hygienist
                         </h1>
@@ -19,7 +19,7 @@ const HygienistHero = () => {
           A visit with one of our highly trained dental hygienists is an essential part of maintaining a healthy and beautiful smile.
           </p>
 
-          <div className="mt-6">
+          <div className="mt-6 flex flex-col items-center xl:items-start">
             <div className="flex gap-2 items-center">
               <Image src={right_thick} alt="right_thick" />
               <p className="text-[16px] text-[#161616] lg:text-left text-center">0% Finance Options</p>

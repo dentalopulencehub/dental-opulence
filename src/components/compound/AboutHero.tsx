@@ -91,7 +91,7 @@ const AboutHero = () => {
             <Image
               src={isMuted ? speakerMuteIcon : speakerIcon}
               alt="Speaker Icon"
-              className="w-10 h-10 grayscale invert"
+              className="lg:w-10 lg:h-10 w-5 h-5 grayscale invert"
             />
           </div>
         </div>

@@ -70,13 +70,17 @@ const OurResult = () => {
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-6 justify-center mt-10">
+        {/* <div className="lg:flex hidden flex-wrap gap-6 justify-center mt-10">
+          {home_result_images.map((data, index) => (
+            <ResultCard key={index} image={data} />
+          ))}
+        </div> */}
+
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6  mt-10">
           {home_result_images.map((data, index) => (
             <ResultCard key={index} image={data} />
           ))}
         </div>
-
- 
       </div>
     </div>
   );

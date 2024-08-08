@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import PrimaryLink from "../atom/PrimaryLink";
 
-import service_transform_image1 from "../../../assets/images/service_transform_image1.svg";
+import service_transform_image1 from "../../../assets/images/service_transform.png";
 
 
 import service_transform_image2 from "../../../assets/images/service-transform-img2.svg";
@@ -33,7 +33,7 @@ const ServiceTransform = () => {
             />
           </div>
 
-          <div className="w-full h-[50%] mx-auto  mt-[77px]">
+          <div className="w-full   mx-auto  mt-[77px]">
             <Image src={service_transform_image1} alt="" className="mx-auto" />
           </div>
         </div>

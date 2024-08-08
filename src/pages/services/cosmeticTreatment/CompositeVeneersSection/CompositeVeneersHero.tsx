@@ -21,7 +21,7 @@ const CompositeVeneersHero = () => {
           We understand that the appearance of your teeth can affect your self-confidence and overall well-being. That’s why we offer composite veneers as a cosmetic solution for improving the appearance of your teeth.
           </p>
 
-          <div className="mt-6">
+          <div className="mt-6 flex flex-col items-center xl:items-start">
             <div className="flex gap-2 items-center">
               <Image src={right_thick} alt="right_thick" />
               <p className="text-[16px] text-[#161616] lg:text-left text-center">0% Finance Options</p>

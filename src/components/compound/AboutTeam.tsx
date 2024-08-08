@@ -89,38 +89,36 @@ const AboutTeam = () => {
   const [selectedPerson, setSelectedPerson] = useState(people[0]);
 
   return (
-    <div className="md:grid md:grid-cols-12 w-full lg:px-[100px] sm:px-[40px] px-[20px] py-[90px] gap-6 ">
+    <div className="xl:grid xl:grid-cols-12 w-full lg:px-[100px] sm:px-[40px] px-[20px] py-[90px] gap-6">
+      <div className='xl:grid col-span-6 gap-6 xl:h-[860px]'>
+        <div className='bg-[#F3F3F3] p-10 rounded-[16px] xl:h-[330px]'>
+          <div className='flex justify-between '>
+            <h3 className='font-[700] text-[28px] text-[#222222]'>Meet Our Team</h3>
+            <Image src={firstBoxIcon} alt='firstBoxIcon'/>
+          </div>
+          <div className='mt-5'>
+            <h2 className='md:text-[48px] text-[38px] font-[700] text-[#222222]'>Leadership Rooted <br/>in Experience</h2>
+          </div>
+        </div>
 
-<div className='md:grid col-span-6 gap-6 md:h-[860px]'>
-  <div className='bg-[#F3F3F3] p-10 rounded-[16px] md:h-[330px]'>
-     <div className='flex justify-between '>
-       <h3 className='font-[700] text-[28px] text-[#222222]'>Meet Our Team</h3>
-       <Image src={firstBoxIcon} alt='firstBoxIcon'/>
-     </div>
-     <div className='mt-5'>
-        <h2 className='md:text-[48px] text-[38px] font-[700] text-[#222222]'>Leadership Rooted <br/>in Experience</h2>
-     </div>
-  </div>
-
-  <div className="md:flex md:flex-wrap grid grid-cols-2 w-full bg-[#F3F3F3] p-10 rounded-[16px] md:mt-0 mt-5 md:h-[530px]">
-    {people.map((person) => (
-      <Person
-        key={person.id}
-        id={person.id}
-        name={person.name}
-        onClick={() => setSelectedPerson(person)}
-        active={selectedPerson.id === person.id}
-      />
-    ))}
-  </div>
-</div>
-
-
- 
+        <div className="md:flex md:flex-wrap py-4 md:bg-[#F3F3F3] md:p-10 md:rounded-[16px] md:mt-0 mt-5 md:h-[530px] overflow-x-auto whitespace-nowrap md:whitespace-normal scrollbar-hide">
+          <div className="flex md:flex-wrap md:static">
+            {people.map((person) => (
+              <Person
+                key={person.id}
+                id={person.id}
+                name={person.name}
+                onClick={() => setSelectedPerson(person)}
+                active={selectedPerson.id === person.id}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+      
       <div className="md:col-span-6 w-full md:mt-0 mt-5">
         <LifeDescription name={selectedPerson.name} description={selectedPerson.description} designation={selectedPerson.designation}/>
       </div>
-
     </div>
   );
 };

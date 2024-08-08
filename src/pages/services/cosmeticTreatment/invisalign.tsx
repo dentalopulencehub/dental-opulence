@@ -43,7 +43,6 @@ import InvisalignOurCases from "./invisalignSection/OurCases";
         <CosmaticWalkThrough/>
         <ServiceTransform />
         {/* <CompositeBondingHowLong /> */}
-        <InvisalignOurCases />
         {/* <HomeOurServices /> */}
         <TestimonyComp />
         {/* <OurProcess /> */}

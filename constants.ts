@@ -969,14 +969,7 @@ export const service_award_images = [
 export const service_awards_images = [];
 
 export const popular_services: HomePopularServicesType[] = [
-  {
-    image: teeth_whitening_service_image,
-    href: "/services/cosmeticTreatment/teeth-whitening",
-    image_inverted: teeth_whitening_service_image_dark,
-    title: "Teeth Whitening",
-    description:
-      "Teeth whitening is a convenient and effective way to achieve a brighter, more youthful-looking smile. Our dental practice offers this solution to boost self-confidence and improve...",
-  },
+
   {
     image: invisalign_service_image,
     href: "/services/cosmeticTreatment/invisalign",
@@ -992,6 +985,14 @@ export const popular_services: HomePopularServicesType[] = [
     title: "Edge Bonding",
     description:
       "We understand that the look of your teeth can greatly impact your self-confidence and overall well-being. That's why we provide composite edge bonding as a solution to enhance the...",
+  },
+  {
+    image: teeth_whitening_service_image,
+    href: "/services/cosmeticTreatment/teeth-whitening",
+    image_inverted: teeth_whitening_service_image_dark,
+    title: "Teeth Whitening",
+    description:
+      "Teeth whitening is a convenient and effective way to achieve a brighter, more youthful-looking smile. Our dental practice offers this solution to boost self-confidence and improve...",
   },
   {
     image: general_dentistry_service_image,
@@ -1024,13 +1025,13 @@ export const our_services: HomeOurServicesType[] = [
     image_inverted: extraction_sevices_image_dark,
   },
   {
-    title: "Crowns / Veneers",
-    price:"£650",
-    href: "/services/generalTreatment/crowns-veneers",
+    title: "Bridges",
+    price:"from £650",
+    href: "/services/generalTreatment/bridges",
     description:
-      "Crowning Glory, Veneer Elegance: Elevate Your Smile with Precision Crafted Perfection.",
-    image: crown_veneers_services_image,
-    image_inverted: crown_veneers_services_image_dark,
+      "Bridging Smiles, Connecting Confidence: Seamlessly Restore Your Complete Smile with Expertly Crafted Bridges.",
+    image: bridges_services_image,
+    image_inverted: bridges_services_image_dark,
   },
   {
     title: "Hygienist",
@@ -1042,31 +1043,13 @@ export const our_services: HomeOurServicesType[] = [
     image_inverted: hygienist_services_image_dark,
   },
   {
-    title: "Root Canal Treatments",
-    price:"from £495",
-    href: "/services/generalTreatment/root-canal-treatments",
+    title: "Sedation",
+    price:"",
+    href: "/services/generalTreatment/sedation",
     description:
-      "Rooted in Precision, Reviving Smiles: Expert Care for Painless Root Canal Treatments.",
-    image: root_canal_services_image,
-    image_inverted: root_canal_services_image_dark,
-  },
-  {
-    title: "Bridges",
-    price:"from £650",
-    href: "/services/generalTreatment/bridges",
-    description:
-      "Bridging Smiles, Connecting Confidence: Seamlessly Restore Your Complete Smile with Expertly Crafted Bridges.",
-    image: bridges_services_image,
-    image_inverted: bridges_services_image_dark,
-  },
-  {
-    title: "White Fillings",
-    price:"from £210",
-    href: "/services/generalTreatment/white-fillings",
-    description:
-      "Radiant Smiles, Seamless Repairs: Unveil the Beauty of White Fillings at Our Dental Oasis!",
-    image: white_fillings_services_image,
-    image_inverted: white_fillings_services_image_dark,
+      "Oral sedation involves administering sedative drugs orally to ease anxiety and facilitate dental procedures.",
+    image: examination_services_image,
+    image_inverted: examination_services_image_dark,
   },
   {
     title: "Examination",
@@ -1078,6 +1061,35 @@ export const our_services: HomeOurServicesType[] = [
     image_inverted: examination_services_image_dark,
   },
   {
+    title: "Root Canal Treatments",
+    price:"from £495",
+    href: "/services/generalTreatment/root-canal-treatments",
+    description:
+      "Rooted in Precision, Reviving Smiles: Expert Care for Painless Root Canal Treatments.",
+    image: root_canal_services_image,
+    image_inverted: root_canal_services_image_dark,
+  },
+  {
+    title: "Crowns / Veneers",
+    price:"£650",
+    href: "/services/generalTreatment/crowns-veneers",
+    description:
+      "Crowning Glory, Veneer Elegance: Elevate Your Smile with Precision Crafted Perfection.",
+    image: crown_veneers_services_image,
+    image_inverted: crown_veneers_services_image_dark,
+  },
+  
+  {
+    title: "White Fillings",
+    price:"from £210",
+    href: "/services/generalTreatment/white-fillings",
+    description:
+      "Radiant Smiles, Seamless Repairs: Unveil the Beauty of White Fillings at Our Dental Oasis!",
+    image: white_fillings_services_image,
+    image_inverted: white_fillings_services_image_dark,
+  },
+
+  {
     title: "Scale and Polish",
     price:"",
     href: "/services/generalTreatment/scale-and-polish",
@@ -1085,16 +1097,8 @@ export const our_services: HomeOurServicesType[] = [
       "Scaling removes plaque (calculus) causing teeth damage and gum disease then polishing smooths teeth.",
     image: examination_services_image,
     image_inverted: examination_services_image_dark,
-  },
-  {
-    title: "Sedation",
-    price:"",
-    href: "/services/generalTreatment/sedation",
-    description:
-      "Oral sedation involves administering sedative drugs orally to ease anxiety and facilitate dental procedures.",
-    image: examination_services_image,
-    image_inverted: examination_services_image_dark,
-  },
+  }
+
 ];
 
 
@@ -1107,6 +1111,15 @@ export const our_services2: HomeOurServicesType[] = [
       "Rediscover Confidence, Embrace Comfort: Tailored Dentures for Your Perfect Smile.",
     image: invisalign_service_icon,
     image_inverted: invisalign_service_icon_light,
+  },
+  {
+    title: "Implant",
+    price:"from £2500",
+    href: "/services/cosmeticTreatment/implants",
+    description:
+      "Elevate Your Smile, Embrace Hygiene: Where Precision Meets Care with Our Expert Hygienists.",
+      image: composite_bonding_service_icon,
+      image_inverted: composite_bonding_service_icon_light,
   },
   {
     title: "Composite Veneers",
@@ -1127,7 +1140,7 @@ export const our_services2: HomeOurServicesType[] = [
     image_inverted: fixed_retainer_service_icon_light,
   },
   {
-    title: "Composite  Bonding",
+    title: "Composite Bonding",
     price:"from £300",
     href: "/services/cosmeticTreatment/composite-bonding",
     description:
@@ -1165,26 +1178,6 @@ export const our_services2: HomeOurServicesType[] = [
     image: vivera_retainers_service_icon,
     image_inverted: vivera_retainers_service_icon_light,
   },
-  {
-    title: "Internal Tooth Whitening",
-    price:"£350",
-    href: "/services/cosmeticTreatment/internal-tooth-whitening",
-    description:
-      "Beyond Every Smile Lies a Story: Thorough Examinations for Your Dental Well-being.",
-    image: internal_tooth_whitening_service_icon,
-    image_inverted: internal_tooth_whitening_service_icon_light,
-  },
-
-  {
-    title: "Crowns/Veneers",
-    price:"£650",
-    href: "/services/cosmeticTreatment/crowns-veneers",
-    description:
-      "Crowning Glory, Veneer Elegance: Elevate Your Smile with Precision Crafted Perfection.",
-    image: crown_veneers_service_icon,
-    image_inverted: crown_veneers_service_icon_light,
-  },
- 
 
   {
     title: "Composite Edge Bonding",
@@ -1195,6 +1188,26 @@ export const our_services2: HomeOurServicesType[] = [
     image: composite_edge_bonding_service_icon,
     image_inverted: composite_edge_bonding_service_icon_light,
   },
+  {
+    title: "Internal Tooth Whitening",
+    price:"£350",
+    href: "/services/cosmeticTreatment/internal-tooth-whitening",
+    description:
+      "Beyond Every Smile Lies a Story: Thorough Examinations for Your Dental Well-being.",
+    image: internal_tooth_whitening_service_icon,
+    image_inverted: internal_tooth_whitening_service_icon_light,
+  },
+ 
+  {
+    title: "Crowns / Veneers",
+    price:"£650",
+    href: "/services/cosmeticTreatment/crowns-veneers",
+    description:
+      "Crowning Glory, Veneer Elegance: Elevate Your Smile with Precision Crafted Perfection.",
+    image: crown_veneers_service_icon,
+    image_inverted: crown_veneers_service_icon_light,
+  },
+
 
   // {
   //   title: "Consultation",
@@ -1208,15 +1221,7 @@ export const our_services2: HomeOurServicesType[] = [
 
 
 
-  {
-    title: "Implant",
-    price:"from £2500",
-    href: "/services/cosmeticTreatment/implants",
-    description:
-      "Elevate Your Smile, Embrace Hygiene: Where Precision Meets Care with Our Expert Hygienists.",
-      image: composite_bonding_service_icon,
-      image_inverted: composite_bonding_service_icon_light,
-  },
+ 
   // {
   //   title: "Dentures Stabilisation",
   //   price:"from £4700",

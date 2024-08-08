@@ -56,14 +56,14 @@ const AboutGetInTouch = () => {
     <div className="text-[#fff] lg:px-[100px] sm:px-[40px] px-[20px] pb-28 pt-8">
       <div className="flex xl:flex-row flex-col gap-6 w-full">
         <div className="flex flex-col flex-wrap gap-6 justify-between xl:max-w-[425px] w-full">
-          <div className="sm:max-w-[425px] w-full xl:h-[530px] bg-[#222222] rounded-2xl xs:p-10 p-5">
+          <div className="xl:max-w-[425px] w-full xl:h-[530px] bg-[#222222] rounded-2xl xs:p-10 p-5">
             <Image src={about_mission_logo} width={70} alt="" />
-            <p className="text-[22px] font-[500] mt-7">
+            <p className="text-[22px] font-inter font-[400] mt-7">
             To log in to the patient portal or make a new inquiry click the buttons below
             </p>
-            <p className="text-sm text-[#C3C3C3] font-medium my-4">Note: New patients should click ‘contact us’ to start a new enquiry and existing patients can click ‘book now’</p>
+            <p className="text-sm font-inter text-[#C3C3C3]  my-4">Note: New patients should click ‘contact us’ to start a new enquiry and existing patients can click ‘book now’</p>
 
-            <div className="text-[13.5px]">
+            <div className="text-[13.5px]  font-inter">
               <div className="flex gap-2 items-center">
                 <Image src={email} alt="email" />
                 <p>info@do.co.uk</p>
@@ -83,17 +83,17 @@ const AboutGetInTouch = () => {
               </div>
             </div>
 
-            <div className="flex gap-4 mt-1 items-center justify-between">
+            <div className="flex gap-4 mt-6 items-center justify-between">
               <Link
                 href={"https://book.do.co.uk/"}
                 target="blank"
-                className="bg-[#fff] px-10 py-2 rounded-full"
+                className="bg-[#fff] px-10 py-3 rounded-full"
               >
                 <button className="text-[#000] text-sm ">Book now</button>
               </Link>
               <Link
                 href={"contact"}
-                className="border border-white px-10 py-2 rounded-full"
+                className="border hidden lg:block border-white px-10 py-2 rounded-full"
               >
                 <button className="text-white ">Contact us</button>
               </Link>
@@ -146,12 +146,12 @@ const AboutGetInTouch = () => {
         </div>
         <div className="flex flex-col gap-6 w-full">
           <div className="w-full xl:min-h-[360px] bg-[#222222] rounded-2xl xs:p-10 p-7">
-            <h4 className="text-white text-[34px]">Get In Touch With Us</h4>
+            <h4 className="text-white text-xl lg:text-[34px]">Get In Touch With Us</h4>
 
             <form className="mt-7">
              
 
-              <div className="flex gap-10">
+              <div className="flex flex-col lg:flex-row gap-10">
                 <input
                   type="text"
                   placeholder="Your Name*"
@@ -166,7 +166,7 @@ const AboutGetInTouch = () => {
                </div>  
 
 
-               <div className="flex gap-10 mt-[44px]">
+               <div className="flex flex-col gap-10 lg:flex-row  mt-[44px]">
                  <input
                   type="number"
                   placeholder="Mobile Number*"

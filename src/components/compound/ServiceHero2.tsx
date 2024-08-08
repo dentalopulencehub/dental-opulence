@@ -28,12 +28,12 @@ const ServiceHero2 = ({
 
   return (
     <div className="w-full">
-      <div className="bg-[#fff] w-full lg:px-[100px] sm:px-[40px] px-[20px] py-[80px] flex xl:flex-row flex-col justify-between gap-[70px] xl:gap-0">
-        <div className="xl:max-w-[400px] md:w-[70%] w-[90%]">
-          <h2 className="text-[34px] text-[#100E10] font-Pangram-Medium sm:w-[309px] w-full">
+      <div className="bg-[#fff] w-full lg:px-[100px] mx-auto items-center 2xl:items-start sm:px-[40px] px-[20px] py-[80px] flex xl:flex-row flex-col justify-between gap-[70px] xl:gap-0">
+        <div className="3xl:max-w-[400px] ">
+          <h2 className="text-[34px] text-[#100E10] text-center 2xl:text-left font-Pangram-Medium sm:w-[309px] w-full">
             Restore Your Smile&apos;s Integrity
           </h2>
-          <Image src={service_her2_ill} alt="" className="mt-8" />
+          <Image src={service_her2_ill} alt="" className="mt-8 mx-auto" />
         </div>
 
         <div className="xl:max-w-[690px] w-[90%] mx-auto flex flex-col xl:items-start items-center">

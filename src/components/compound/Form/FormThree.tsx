@@ -7,13 +7,17 @@ const FormThree = ({ handleStepChange, handleOptionSelect, handleOptionDeselect 
 
   const toggleOption = (label: string, title: string) => {
     if (selectedOptions.includes(label)) {
-      setSelectedOptions(selectedOptions.filter(option => option !== label));
+      // Deselect the option
+      setSelectedOptions(prevOptions => prevOptions.filter(option => option !== label));
       if (handleOptionDeselect) {
         handleOptionDeselect(label, title);
       }
     } else {
-      setSelectedOptions([...selectedOptions, label]);
-      handleOptionSelect(label, title);
+      // Select the option
+      setSelectedOptions(prevOptions => [...prevOptions, label]);
+      if (handleOptionSelect) {
+        handleOptionSelect(label, title);
+      }
     }
   };
 
@@ -22,13 +26,12 @@ const FormThree = ({ handleStepChange, handleOptionSelect, handleOptionDeselect 
       // Maybe show an error message or alert
       return;
     }
-
     if (selectedOptions.length === 1) {
       const index = stepTwo.findIndex(item => item.label === selectedOptions[0]);
       handleStepChange(index === 0 ? "formFour" : "formFive");
     } else {
       // Both options selected, go to a new form
-      handleStepChange("formCombined");  // Assuming "formSix" is the new form for both options
+      handleStepChange("formCombined");  // Assuming "formCombined" is the new form for both options
     }
   };
 
@@ -50,9 +53,13 @@ const FormThree = ({ handleStepChange, handleOptionSelect, handleOptionDeselect 
         ))}
       </div>
       <div className="mt-4 w-full flex justify-center items-center">
-      <button onClick={() => {
-          handleNext();
-        }} type='button' className="text-white font-medium text-base rounded-full px-12 py-4 border-white border">Next</button>
+        <button
+          onClick={handleNext}
+          type='button'
+          className="text-white font-medium text-base rounded-full px-12 py-4 border-white border"
+        >
+          Next
+        </button>
       </div>
     </div>
   );

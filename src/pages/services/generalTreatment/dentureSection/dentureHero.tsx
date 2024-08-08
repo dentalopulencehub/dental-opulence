@@ -19,7 +19,7 @@ const DentureHero = () => {
           At our practice, we offer partial and complete dentures to replace missing teeth, improving both oral health and self-confidence.
           </p>
 
-          <div className="mt-6">
+          <div className="mt-6 flex flex-col items-center xl:items-start">
             <div className="flex gap-2 items-center">
               <Image src={right_thick} alt="right_thick" />
               <p className="text-[16px] text-[#161616] lg:text-left text-center">0% Finance Options</p>

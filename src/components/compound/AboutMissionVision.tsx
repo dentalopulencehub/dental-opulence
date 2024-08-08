@@ -29,7 +29,7 @@ const AboutMissionVision = () => {
   const words = value2.split(" ");
   const words2 = value.split(" ");
   const Card = ({ index,title, icon, activeIcon }: { index:number,title: string, icon: any, activeIcon: any }) => {
-    return <div onClick={()=>setShowOverlay(index)} className='cursor-pointer rounded-lg group hover:bg-white w-full md:w-[25%] bg-[#2D2D2D] font-medium text-[#D0D0D0] hover:text-[#161616] flex flex-col gap-8 items-center aspect-[4/3] justify-center'>
+    return <div onClick={()=>setShowOverlay(index)} className='cursor-pointer rounded-xl group hover:bg-white w-full  bg-[#2D2D2D] font-medium text-[#D0D0D0] hover:text-[#161616] flex flex-col gap-8 items-center aspect-[3/4] lg:aspect-[4/3] justify-center'>
       <div className="group-hover:hidden">{icon}</div>
       <div className="hidden group-hover:flex">{activeIcon}</div>
       <p>{title}</p>
@@ -38,7 +38,7 @@ const AboutMissionVision = () => {
 
   const Overlay = ({ children }: { children: ReactNode }) => {
     return <div onClick={()=>setShowOverlay(false)} className="fixed top-0 z-50 bg-transparent backdrop-blur-sm w-[100vw] h-[100vh] flex items-center justify-center">
-      <div onClick={(e) => e.stopPropagation()} className="bg-[#222222] w-[30%] aspect-[2/1] flex flex-col items-center text-[#F2F2F2] p-8 justify-center rounded-xl text-l">
+      <div onClick={(e) => e.stopPropagation()} className="bg-[#222222] xl:w-[30%] w-[70%] aspect-[2/1] flex flex-col items-center text-[#F2F2F2] p-8 justify-center rounded-xl text-l">
         <div className="flex w-full justify-end mb-4">
         <button onClick={()=>setShowOverlay(false)}>
           <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -111,42 +111,40 @@ const AboutMissionVision = () => {
                 })}
               </h4>
             </div>
-            <div className=" w-full xl:h-[310px] bg-[#222222] rounded-2xl flex sm:flex-row flex-col md:justify-around justify-between xs:p-10 p-7 sm:gap-0 gap-10">
-              <div className="flex flex-col items-center justify-center gap-2">
-                <Image src={expert_dentist_img} alt="" />
-                <h3 className="text-[48px] text-white">3+</h3>
-                <p className="text-base text-center mr-3 font-Pangram-Regular text-[#D0D0D0]">
-                  AWARDS
-                </p>
-              </div>
-              <div className="flex flex-col items-center justify-center gap-2">
-                <Image src={twoK_review_image} alt="" />
-                <div className="flex ">
-                 <h3 className="text-[48px] text-white">5</h3>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" className="mt-3">
-                   <path d="M12 2.5l2.47 7.68h8.07l-6.53 4.75 2.47 7.68L12 17.86 5.52 22.61 8 14.93 1.47 10.18h8.07L12 2.5z"/>
-                  </svg>
-                 </div>
-               
-
-                <p className="text-base font-Pangram-Regular text-[#D0D0D0]">
-                  RATING
-                </p>
-              </div>
-              <div className="flex flex-col items-center justify-center gap-2">
-                <Image src={threeK_clients_image} alt="" />
-                <h3 className="text-[48px] text-white">500+</h3>
-                <p className="text-base font-Pangram-Regular text-[#D0D0D0]">
-                  SMILE TRANSMORMATIONS
-                </p>
-              </div>
-            </div>
+            <div className="w-full xl:h-[310px] bg-[#222222] rounded-2xl md:flex md:flex-row grid grid-cols-2 place-content-center md:justify-around justify-between xs:p-10 p-7 sm:gap-0 gap-10">
+  <div className="flex flex-col items-center justify-center gap-2">
+    <Image src={expert_dentist_img} alt="" />
+    <h3 className="text-[48px] text-white">3+</h3>
+    <p className="text-base text-center mr-3 font-Pangram-Regular text-[#D0D0D0]">
+      AWARDS
+    </p>
+  </div>
+  <div className="flex flex-col items-center justify-center gap-2">
+    <Image src={twoK_review_image} alt="" />
+    <div className="flex ">
+      <h3 className="text-[48px] text-white">5</h3>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" className="mt-3">
+        <path d="M12 2.5l2.47 7.68h8.07l-6.53 4.75 2.47 7.68L12 17.86 5.52 22.61 8 14.93 1.47 10.18h8.07L12 2.5z"/>
+      </svg>
+    </div>
+    <p className="text-base font-Pangram-Regular text-[#D0D0D0]">
+      RATING
+    </p>
+  </div>
+  <div className="flex flex-col items-center justify-center gap-2 col-span-2 xl:col-span-1">
+    <Image src={threeK_clients_image} alt="" />
+    <h3 className="text-[48px] text-white">500+</h3>
+    <p className="text-base font-Pangram-Regular text-[#D0D0D0] text-center">
+      SMILE TRANSFORMATIONS
+    </p>
+  </div>
+</div>
           </div>
         </div>
 
       </div>
 
-      <div className="flex gap-4 px-4 md:px-24 mb-12">
+      <div className="grid md:grid-cols-4 grid-cols-2 gap-4 px-4 md:px-24 mb-12">
         <Card index={1} title="Arriving by Car" icon={<svg width="60" height="48" viewBox="0 0 60 48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M3.6204 47.2907H6.58398C8.44183 47.2907 9.8979 45.8592 9.8979 44.0014V39.7832C15.4736 40.1346 23.534 40.3853 29.9872 40.3853C36.4661 40.3853 44.5265 40.1346 50.1022 39.7832V44.0014C50.1022 45.8592 51.5336 47.2907 53.4161 47.2907H56.3797C58.2633 47.2907 59.7193 45.8592 59.7193 44.0014V29.5124C59.7193 25.2932 58.8654 22.9071 56.5308 19.8942L54.4211 17.1567C53.4922 12.6374 51.8347 7.89101 50.9561 6.03316C49.6243 3.19494 47.0133 1.51173 43.6736 1.06066C41.9915 0.859229 36.4918 0.709229 29.9872 0.709229C23.5093 0.709229 18.0086 0.884943 16.3265 1.06066C12.9868 1.46244 10.3758 3.19494 9.04505 6.03208C8.16648 7.89101 6.5079 12.6374 5.57898 17.1567L3.46933 19.8942C1.13362 22.9082 0.280762 25.2932 0.280762 29.5124V44.0014C0.280762 45.8592 1.7379 47.2907 3.6204 47.2907ZM10.6522 15.0728C11.2543 12.3107 12.4597 8.71923 13.2879 7.26209C13.9661 6.08351 14.6947 5.57994 16.0511 5.4053C17.9583 5.12887 22.2279 4.9778 29.9872 4.9778C37.7722 4.9778 42.0408 5.07851 43.95 5.4053C45.2808 5.60566 46.0083 6.08244 46.7122 7.26316C47.5661 8.69458 48.6954 12.3096 49.3479 15.0728C49.575 16.0017 49.1979 16.3532 48.2186 16.2782C44.0508 16.0274 39.0783 15.751 29.9872 15.751C20.9229 15.751 15.9504 16.0274 11.7815 16.2782C10.8022 16.3532 10.4508 16.0017 10.6511 15.0728M11.6797 33.8817C9.29469 33.8817 7.51183 32.0732 7.51183 29.7128C7.51183 27.3267 9.29469 25.5449 11.6797 25.5449C14.0658 25.5449 15.8486 27.3267 15.8486 29.7128C15.8486 32.0732 14.0658 33.8807 11.6808 33.8807M48.3193 33.8807C45.9333 33.8807 44.1515 32.0721 44.1515 29.7117C44.1515 27.3257 45.9333 25.5439 48.3193 25.5439C50.6797 25.5439 52.4872 27.3257 52.4872 29.7117C52.4872 32.0721 50.6797 33.8807 48.3193 33.8807ZM23.3336 32.7246C21.5754 32.7246 20.3443 31.4689 20.3443 29.7107C20.3443 27.9278 21.5754 26.6978 23.3336 26.6978H36.6675C38.4247 26.6978 39.6558 27.9278 39.6558 29.7107C39.6558 31.4678 38.4247 32.7246 36.6665 32.7246H23.3336Z" fill="#fff" />
         </svg>

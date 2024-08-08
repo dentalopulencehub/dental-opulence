@@ -20,7 +20,7 @@ const InternalToothWhiteningHero = () => {
           Internal tooth whitening is a safe and effective procedure that lightens discolored teeth. It involves applying a bleaching agent to the inside of the tooth, which is then sealed and left in place for a specified period.
           </p>
 
-          <div className="mt-6">
+          <div className="mt-6 flex flex-col items-center xl:items-start">
             <div className="flex gap-2 items-center">
               <Image src={right_thick} alt="right_thick" />
               <p className="text-[16px] text-[#161616] lg:text-left text-center">0% Finance Options</p>

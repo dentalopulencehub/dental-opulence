@@ -10,7 +10,7 @@ const HomePeopleSlider = () => {
 
   return (
     <div className="w-full relative">
-      <div className="bg-[#100E10] w-full py-[80px] border-b border-b-[#3D3D3D]">
+      <div className="bg-[#100E10] w-full py-[80px]  border-b-[#3D3D3D]">
         <Marquee speed={100} gradient={false} pauseOnHover={true} pauseOnClick={true}>
           <div className="flex gap-8">
             {people_slider.map((image, index) => (

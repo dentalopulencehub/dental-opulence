@@ -21,7 +21,7 @@ const CrownsVeneersHero = () => {
           At our dental practice, we understand that tooth damage and discoloration can affect not only your oral health but also your self-confidence. That’s why we offer crowns and veneers as cosmetic solutions for restoring and enhancing the appearance of your teeth.
           </p>
 
-          <div className="mt-6">
+          <div className="mt-6 flex flex-col items-center xl:items-start">
             <div className="flex gap-2 items-center">
               <Image src={right_thick} alt="right_thick" />
               <p className="text-[16px] text-[#161616] lg:text-left text-center">0% Finance Options</p>

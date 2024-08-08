@@ -19,7 +19,7 @@ const CrownsVeneerHero = () => {
           We understand tooth damage and discoloration can impact oral health and self-confidence. We offer crowns and veneers to restore and enhance your teeth&apos;s appearance.
           </p>
 
-          <div className="mt-6">
+          <div className="mt-6 flex flex-col items-center xl:items-start">
             <div className="flex gap-2 items-center">
               <Image src={right_thick} alt="right_thick" />
               <p className="text-[16px] text-[#161616] lg:text-left text-center">0% Finance Options</p>
