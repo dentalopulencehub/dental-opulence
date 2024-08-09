@@ -104,7 +104,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="w-full font-inter">
-            <div className="flex lg:flex-row lg:flex-wrap flex-col gap-10  md:gap-[49px] justify-between">
+            <div className="flex md:flex-row md:flex-wrap flex-col gap-10  md:gap-[49px] justify-between">
               <div className="flex flex-col gap-10  w-[176px]">
                 <div>
                   <h3 className="text-white font-inter  text-xl">
@@ -162,38 +162,29 @@ const Footer = () => {
                
               </div>
               <div className="">
-  <h3 className="text-white font-inter text-xl mb-5">
-    Opening Hours
-  </h3>
-  <div className="grid grid-cols-[1fr,10px,1fr] text-sm text-[#A2A2A2] font-inter">
-    <div className="space-y-5">
-      <p>Sunday</p>
-      <p>Monday</p>
-      <p>Tuesday</p>
-      <p>Wednesday</p>
-      <p>Thursday</p>
-      <p>Friday</p>
-      <p>Saturday</p>
-    </div>
-    <div className="space-y-5">
-      <p></p>
-      <p></p>
-      <p></p>
-      <p></p>
-      <p></p>
-      <p></p>
-      <p></p>
-    </div>
-    <div className="space-y-5">
-      <p>Closed</p>
-      <p>Closed</p>
-      <p>9am - 5pm</p>
-      <p>Closed</p>
-      <p>9am - 5pm</p>
-      <p>9am - 5pm</p>
-      <p>9am - 5pm</p>
-    </div>
+              <h3 className="text-white font-inter text-xl mb-5">
+  Opening Hours
+</h3>
+<div className="grid grid-cols-[1fr,1fr] text-sm text-[#A2A2A2] font-inter">
+  <div className="space-y-5 sm:space-y-3 md:space-y-5">
+    <p>Sunday</p>
+    <p>Monday</p>
+    <p>Tuesday</p>
+    <p>Wednesday</p>
+    <p>Thursday</p>
+    <p>Friday</p>
+    <p>Saturday</p>
   </div>
+  <div className="space-y-5 -ml-5 md:ml-0 sm:space-y-3 md:space-y-5 md:pl-2">
+    <p>Closed</p>
+    <p>Closed</p>
+    <p>9am - 5pm</p>
+    <p>Closed</p>
+    <p>9am - 5pm</p>
+    <p>9am - 5pm</p>
+    <p>9am - 5pm</p>
+  </div>
+</div>
 </div>
               <div className="flex flex-col gap-10 w-[176px] md:mt-0 mt-8">
                 <div>

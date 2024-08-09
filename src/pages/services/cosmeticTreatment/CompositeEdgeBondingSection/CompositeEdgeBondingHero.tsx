@@ -8,7 +8,7 @@ import Link from "next/link";
 const CompositeEdgeBondingHero = () => {
   return (
     <div className="w-full">
-      <div className="bg-[#FFFFFF] gap-20 rounded-t-[24px] pt-[100px] pb-[100px] h-full w-full items-center flex xl:flex-row flex-col justify-between xl:px-[100px] sm:px-[40px] px-[20px]">
+      <div className="bg-[#FFFFFF] lg:gap-20 rounded-t-[24px] pt-[100px] pb-[100px] h-full w-full items-center flex xl:flex-row flex-col justify-between xl:px-[100px] sm:px-[40px] px-[20px]">
         <div className="flex flex-col xl:items-start items-center w-full xl:w-[50%] py-8">
           <div className="flex flex-row items-center gap-4">
             <h1 className="font-Pangram-Bold sm:text-[60px] w-full sm:leading-[64px] text-[44px] xl:text-left text-center text-[#161616]">
@@ -31,21 +31,21 @@ const CompositeEdgeBondingHero = () => {
             </div>
           </div>
 
-          <div className="flex gap-6 xs:mt-[56px] mt-[32px] sm:mx-0 mx-auto xs:flex-row flex-col">
-            <Link
-              href="https://book.do.co.uk/"
-              target="_blank"
-              title="Book now"
-              className="py-4 px-8 rounded-[34px] text-white bg-[#100E10] font-Pangram-Medium text-xs mt-6 hover:text-[#100E10] hover:bg-transparent border border-transparent hover:border-[#100E10] duration-0 cursor-pointer"
-            >
-              Book now
-            </Link>
-            <PrimaryLink
-              href="/about"
-              title="About us"
-              style="py-4 px-8 rounded-[34px] font-Pangram-Medium text-xs xs:mt-6 border border-[#100E10] bg-transparent text-[#100E10] hover:text-[#fff] hover:bg-[#100E10] hover:border-[#100E10] duration-0 cursor-pointer"
-            />
-          </div>
+          <div className="flex sm:flex-row gap-4 xs:mt-[56px] mt-[32px] sm:mx-0 mx-auto">
+      <Link
+        href="https://book.do.co.uk/"
+        target="_blank"
+        title="Book now"
+        className="py-4 px-8 rounded-[34px] font-Pangram-Medium text-xs inline-flex items-center justify-center min-w-[120px] text-white bg-[#100E10] hover:text-[#100E10] hover:bg-transparent border border-[#100E10] transition-colors duration-300 ease-in-out"
+      >
+        Book now
+      </Link>
+      <PrimaryLink
+        href="/about"
+        title="About us"
+        style="py-4 px-8 rounded-[34px] font-Pangram-Medium text-xs inline-flex items-center justify-center min-w-[120px] border border-[#100E10] bg-transparent text-[#100E10] hover:text-white hover:bg-[#100E10] transition-colors duration-300 ease-in-out"
+      />
+    </div>
         </div>
         <div className="flex justify-center w-full xl:w-[50%] mt-8 xl:mt-0">
           <Image src={composite_edge_bonding_service_hero_image} alt="Composite Bonding Hero Image" className="max-w-full h-auto" />

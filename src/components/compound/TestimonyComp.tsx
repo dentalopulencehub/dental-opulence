@@ -219,7 +219,7 @@ const TestimonyComp = () => {
 {reviews.map((review, i) => (
   <div
     key={i}
-    className="w-full -ml-6 xl:-ml-0 aspect-[3/4] h-full flex-shrink-0"
+    className="w-full -ml-12 xl:-ml-0 aspect-[3/4] h-full flex-shrink-0"
   >
     <div className="h-full w-full rounded-[0.875rem] bg-black flex flex-col justify-between p-8">
       <div>

@@ -59,26 +59,26 @@ const TeethWhiteningOurCases = () => {
         <Carousel direction={direction} setDirection={setDirection}>
           {theeth_whitening_our_cases_images.map((data, index, arr) => (
             <div
-              className={`sm:w-[280px] rounded-3xl overflow-hidden w-fit mx-auto card flex-shrink-0 ${
-                index !== arr.length - 1 ? "mr-[40px]" : "mr-[130px]"
-              }`}
-              key={index}
-            >
-              <div className="bg-[#100E10] px-[20px] py-[15px] flex items-center rounded-t-2xl">
-                <Image src={result_logo_micro} alt="Result logo micro" />
-                <p className="text-xs font-Pangram-Regular text-white ml-3">
-                  dentalopulence
-                </p>
-              </div>
-              <div className="relative overflow-hidden">
-                <Image src={data} alt="Result Image" className="w-full" />
-                <Image
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                  src={result_logo_mini}
-                  alt=""
-                />
-              </div>
+            className={`w-[280px] overflow-hidden rounded-3xl mx-auto card flex-shrink-0 ${
+              index !== arr.length - 1 ? "lg:mr-[40px]" : "lg:mr-[130px]"
+            }`}
+            key={index}
+          >
+            <div className="bg-[#100E10] px-[20px] py-[15px] flex items-center rounded-t-2xl">
+              <Image src={result_logo_micro} alt="Result logo micro" />
+              <p className="text-xs font-Pangram-Regular text-white ml-3">
+                dentalopulence
+              </p>
             </div>
+            <div className="relative">
+              <Image src={data} alt="Result Image" className="" />
+              <Image
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                src={result_logo_mini}
+                alt=""
+              />
+            </div>
+          </div>
           ))}
         </Carousel>
       </div>
