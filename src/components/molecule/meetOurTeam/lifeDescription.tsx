@@ -11,7 +11,7 @@ interface DescriptionProps {
 
 const LifeDescription: React.FC<DescriptionProps> = ({ name, description,designation }) => {
   return (
-    <div className="py-8 px-10 bg-[#F3F3F3] rounded-[16px] w-full">
+    <div className="py-8 lg:px-10 px-4 bg-[#F3F3F3] rounded-[16px] w-full">
       <p className="mt-2 text-[19px] font-[500] ">{description}</p>
       <div className='flex justify-between items-center mt-7'>
         <h2 className="text-2xl font-bold ">{name}</h2>

@@ -23,9 +23,9 @@ interface PersonProps {
 
 const Person: React.FC<PersonProps> = ({ id, name, onClick, active }) => {
   return (
-    <div className="p-2 bg-[#F3F3F3] ">
+    <div className="p-4  ">
       <div
-        className={`h-[120px] w-[120px] rounded-full overflow-hidden cursor-pointer border-4 border-[#F3F3F3]${
+        className={`lg:h-[120px] lg:w-[120px] h-[80px] w-[80px] rounded-full overflow-hidden cursor-pointer border-4 border-[#F3F3F3]${
           active ? 'border-4 border-[#C9C9C9]' : ''
         }`}
         onClick={onClick}
@@ -35,7 +35,7 @@ const Person: React.FC<PersonProps> = ({ id, name, onClick, active }) => {
           height={120}
           src={images[id - 1]} // Use the imported images array
           alt={name}
-          className={`h-[120px] w-[120px] rounded-full ${active ? 'filter hover:filter-none' : 'grayscale'}`}
+          className={`h-[80px] w-[80px] lg:h-[120px] lg:w-[120px] rounded-full ${active ? 'filter hover:filter-none' : 'grayscale'}`}
         />
       </div>
     </div>

@@ -101,8 +101,8 @@ const AboutTeam = () => {
           </div>
         </div>
 
-        <div className="md:flex md:flex-wrap py-4 md:bg-[#F3F3F3] md:p-10 md:rounded-[16px] md:mt-0 mt-5 md:h-[530px] overflow-x-auto whitespace-nowrap md:whitespace-normal scrollbar-hide">
-          <div className="flex md:flex-wrap md:static">
+        <div className="md:flex md:flex-wrap py-4 bg-[#F3F3F3] md:p-10 rounded-2xl md:mt-0 mt-5 md:h-[530px] overflow-x-auto whitespace-nowrap md:whitespace-normal scrollbar-hidden">
+          <div className="flex py-4 md:flex-wrap md:static">
             {people.map((person) => (
               <Person
                 key={person.id}
